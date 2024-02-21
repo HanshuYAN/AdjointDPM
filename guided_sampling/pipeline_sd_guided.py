@@ -391,8 +391,6 @@ class StableDiffusionPipelineGuided(StableDiffusionPipeline):
                 repeat = repeats[i]
                 x =  latents.detach().requires_grad_(True)
                 for j in range(repeat):
-                    # import time
-                    # start_time = time.time()
                     x = x.detach().requires_grad_(True)
                     # expand the latents if we are doing classifier free guidance
                     latent_model_input = torch.cat([x] * 2) if do_classifier_free_guidance else x
@@ -424,7 +422,6 @@ class StableDiffusionPipelineGuided(StableDiffusionPipeline):
                             sqrt_one_minus_at = (1 - a_t) ** 0.5
                             if pred_type == "type-1":
                                 pred_x0 = self.node_solver_adaptive(x, i, num_pred_steps, guidance_scale, prompt_embeds, solver_type, cross_attention_kwargs)
-                                # pred_x0 = self.solver_adaptive(x, i, num_pred_steps, guidance_scale, prompt_embeds, solver_type, cross_attention_kwargs)
                             elif pred_type == 'type-2':
                                 pred_x0 = self.node_solver_adaptive_type2(x, i, num_pred_steps, guidance_scale, prompt_embeds, solver_type, cross_attention_kwargs)
 
@@ -456,10 +453,6 @@ class StableDiffusionPipelineGuided(StableDiffusionPipeline):
                         noise = torch.randn_like(x)
                         x = beta_t.sqrt() * x_prev + (1 - beta_t).sqrt() * noise
                     ### <<<< !!!: Guided sampling <<<#
-
-                    # end_time = time.time()
-                    # elapsed_time = end_time - start_time
-                    # print(f"Time taken: {elapsed_time:.4f} seconds")
                     
                 latents = x_prev.detach()
                 
@@ -469,10 +462,6 @@ class StableDiffusionPipelineGuided(StableDiffusionPipeline):
                     if callback is not None and i % callback_steps == 0:
                         callback(i, t, latents)
 
-                        
-        # with open("./outputs/epoch_losses.txt", "a") as file:
-        #     for epoch, loss in losses:
-        #         file.write(f"Epoch {epoch + 1}: Loss = {loss}\n")
         # 8. Post-processing
         image = self.decode_latents(latents)
         image = image.detach().cpu().permute(0, 2, 3, 1).float().numpy() # since not implemented in func-decode
