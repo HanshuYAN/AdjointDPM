@@ -11,7 +11,7 @@ Official Repo for
 First, download and set up the repo:
 
 ```bash
-git clone [https://github.com/HanshuYAN/AdjointDPM.git]
+git clone https://github.com/HanshuYAN/AdjointDPM.git
 cd AdjointDPM
 ```
 
