@@ -11,13 +11,13 @@ Official Repo for
 First, download and set up the repo:
 
 ```bash
-git clone https://github.com/willisma/SiT.git
-cd SiT
+git clone [https://github.com/willisma/SiT.git](https://github.com/HanshuYAN/AdjointDPM.git)
+cd AdjointDPM
 ```
 
 We provide an [`environment.yml`](environment.yml) file that can be used to create a Conda environment. 
 
 ```bash
 conda env create -f environment.yml
-conda activate SiT
+conda activate adjointDPM
 ```
