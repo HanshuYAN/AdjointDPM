@@ -1,9 +1,8 @@
-# AdjointDPM
-Official Repo for 
+## Official Repo for 
 - ## AdjointDPM: Adjoint Sensitivity Method for Gradient Backpropagation of Diffusion Probabilistic Models (ICLR 2024)
 - ## Towards Accurate Guided Diffusion Sampling through Symplectic Adjoint Method
-- 
-### [Paper] (https://openreview.net/pdf?id=y33lDRBgWI) | [Project Page] 
+
+### [Paper1](https://openreview.net/pdf?id=y33lDRBgWI) | [Paper2](https://arxiv.org/pdf/2312.12030.pdf) | [Project Page] 
 
 
 ## Setup
