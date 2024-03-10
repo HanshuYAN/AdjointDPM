@@ -1,0 +1,41 @@
+name: SAG
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10.12
+  - pip=23.2.1
+  - cudatoolkit=11.7
+  - pip:
+    - tensorflow-cpu==2.13.0
+    - pytorch_lightning==1.8.6
+    - numpy==1.24.3
+    - torch==2.0.0
+    - torchvision==0.15.1
+    - diffusers==0.20.2
+    - controlnet-aux==0.0.7
+    - fairscale==0.4.13
+    - transformers==4.27.0
+    - accelerate==0.22.0
+    - imageio==2.27.0
+    - imageio-ffmpeg==0.4.8
+    - decord==0.6.0
+    - gdown==4.7.1
+    - einops==0.6.1
+    - omegaconf==2.3.0
+    - safetensors==0.3.2
+    - gradio==3.40.1
+    - gradio-client==0.4.0
+    - wandb==0.15.8
+    - opencv-python-headless==4.5.5.64
+    - pillow==9.4.0
+    - triton==2.0.0
+    - open_clip_torch==2.16.0
+    - basicsr==1.4.2
+    - scikit_image==0.19.3
+    - scipy==1.10.1
+    - tqdm==4.64.1
+    - datasets==2.14.5
+    - torchdiffeq
