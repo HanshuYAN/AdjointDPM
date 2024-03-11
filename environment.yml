@@ -1,4 +1,4 @@
-name: SAG
+name: adjoint
 channels:
   - pytorch
   - nvidia
